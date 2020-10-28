@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Karakter</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <textarea name="char" style="height: 250px;resize: none;width: 100%" id="text"></textarea>
+    <br>
+    <span>
+    	Karakter: <label id="cnt"></label>
+      <br>
+      Kata : <label id="wrd"></label>
+    </span>
+    <br>
+    <button type="button" onclick="cntChar()">Hitung</button>
+
+    <script type="text/javascript">
+
+    	function cntChar(){
+	    	var text = document.getElementById('text').value;
+	    	// console.log(text);
+	    	var h = text.length;
+        var s = text.replace(/(^\s*)|(\s*$)/gi,"");
+      	s = text.replace(/[ ]{2,}/gi," ");
+      	s = text.replace(/\n /,"\n");
+	    	document.getElementById("cnt").innerHTML = h;
+        document.getElementById("wrd").innerHTML = s.split(' ').length;
+    	}
+    </script>
+</body>
+</html>
