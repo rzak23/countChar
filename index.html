@@ -2,20 +2,38 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Hitung Karakter</title>
+    <title>Hitung Karakter &amp; Kata</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="assets/font-awesome/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/brands.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/solid.css" rel="stylesheet">
+
 </head>
 <body>
-    <textarea name="char" style="height: 250px;resize: none;width: 100%" id="text"></textarea>
-    <br>
-    <span>
-    	Karakter: <label id="cnt"></label>
-      <br>
-      Kata : <label id="wrd"></label>
-    </span>
-    <br>
-    <button type="button" onclick="cntChar()">Hitung</button>
-
+    <div class="container">
+      <div class="mt-2">
+        <form>
+          <textarea name="char" style="height: 250px;resize: none;" class="form-control" id="text"></textarea>
+          <div class="form-group">
+            Karakter : <label id="cnt"></label>
+            <br>
+            Kata : <label id="wrd"></label>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-primary" onclick="cntChar()">
+              <i class="fas fa-calculator"></i>
+              <span>Hitung</span>
+            </button>
+            <button type="reset" class="btn btn-success">
+              <i class="fas fa-sync"></i>
+              <span>Reset</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="assets/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
 
     	function cntChar(){
