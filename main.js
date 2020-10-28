@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron');
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -9,9 +9,27 @@ function createWindow () {
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('index.html');
+
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+  Menu.setApplicationMenu(mainMenu);
   // win.webContents.openDevTools()
 }
+
+// menu
+const mainMenuTemplate = [
+  {
+    label: 'File',
+    submenu: [
+      {
+        label: 'Keluar',
+        click(){
+          app.quit();
+        }
+      }
+    ]
+  }
+];
 
 app.whenReady().then(createWindow)
 
