@@ -10,26 +10,8 @@ function createWindow () {
   })
 
   win.loadFile('index.html');
-
-  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-  Menu.setApplicationMenu(mainMenu);
-  // win.webContents.openDevTools()
+  win.removeMenu();
 }
-
-// menu
-const mainMenuTemplate = [
-  {
-    label: 'File',
-    submenu: [
-      {
-        label: 'Keluar',
-        click(){
-          app.quit();
-        }
-      }
-    ]
-  }
-];
 
 app.whenReady().then(createWindow)
 
