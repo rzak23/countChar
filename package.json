@@ -15,7 +15,7 @@
   "author": "Reza Akbar Hidayat",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^10.1.5",
+    "electron": "^11.1.0",
     "electron-builder": "^22.9.1"
   },
   "dependencies": {
