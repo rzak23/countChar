@@ -1,6 +1,6 @@
 {
   "name": "countChar",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "main.js",
   "repository": {
@@ -20,6 +20,7 @@
     "electron-builder": "^22.9.1"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3"
+    "bootstrap": "^4.5.3",
+    "update-electron-app": "^2.0.1"
   }
 }
