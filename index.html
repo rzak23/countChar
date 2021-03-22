@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>Hitung Karakter &amp; Kata</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <link rel="icon" href="img/icon.png">
-    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="assets/font-awesome/css/fontawesome.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/brands.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/solid.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Fontaweome -->
+    <link href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css" rel="stylesheet">
+    <link href="node_modules/@fortawesome/fontawesome-free/css/solid.min.css" rel="stylesheet">
+    <link href="node_modules/@fortawesome/fontawesome-free/css/regular.min.css" rel="stylesheet">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="node_modules/toastr/build/toastr.min.css">
 
 </head>
 <body>
@@ -26,15 +29,26 @@
               <i class="fas fa-calculator"></i>
               <span>Hitung</span>
             </button>
-            <button type="reset" class="btn btn-success">
+            <button type="reset" class="btn btn-success" id="btnReset">
               <i class="fas fa-sync"></i>
               <span>Reset</span>
+            </button>
+            <button type="button" class="btn btn-warning btnSalin" id="btnCop" data-clipboard-target="#text">
+              <i class="fas fa-copy"></i>
+              <span>Salin</span>
             </button>
           </div>
         </form>
       </div>
     </div>
-    <script src="assets/jquery/dist/jquery.min.js"></script>
+    <!-- Jquery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Clipboard -->
+    <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+    <!-- Toastr -->
+    <script src="node_modules/toastr/build/toastr.min.js"></script>
     <script type="text/javascript">
     	function cntChar(){
 	    	var text = document.getElementById('text').value;
@@ -46,6 +60,32 @@
 	    	document.getElementById("cnt").innerHTML = h;
         document.getElementById("wrd").innerHTML = s.split(' ').length;
     	}
+      new ClipboardJS('.btnSalin');
+      // toastr
+      toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+      $('#btnCop').click(function(){
+        toastr.success('Text disalin');
+      });
+      $('#btnReset').click(function(){
+        $('#cnt').html('');
+        $('#wrd').html('');
+      })
     </script>
 </body>
 </html>
