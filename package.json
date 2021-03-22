@@ -16,11 +16,15 @@
   "author": "Reza Akbar Hidayat",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^11.1.0",
+    "electron": "^12.0.1",
     "electron-builder": "^22.9.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap": "^4.5.3",
+    "clipboard": "^2.0.8",
+    "jquery": "^3.6.0",
+    "toastr": "^2.1.4",
     "update-electron-app": "^2.0.1"
   }
 }
