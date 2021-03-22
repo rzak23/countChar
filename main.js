@@ -10,7 +10,6 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    icon:'img/icon.png'
   })
 
   win.loadFile('index.html');
