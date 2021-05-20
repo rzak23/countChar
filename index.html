@@ -12,17 +12,27 @@
     <link href="node_modules/@fortawesome/fontawesome-free/css/regular.min.css" rel="stylesheet">
     <!-- Toastr -->
     <link rel="stylesheet" href="node_modules/toastr/build/toastr.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <div class="container">
       <div class="mt-2">
+        <button type="button" class="btn btn-info mb-2" data-bs-toggle="modal" data-bs-target="#about">
+          <i class="fas fa-exclamation"></i>
+          <span>About</span>
+        </button>
         <form>
-          <textarea name="char" style="height: 250px;resize: none;" class="form-control" id="text"></textarea>
+          <textarea name="char" class="text-editor" id="text"></textarea>
           <div class="form-group">
-            Karakter : <label id="cnt"></label>
+            <span class="text-result">
+              Karakter : <label id="cnt"></label>
+            </span>
             <br>
-            Kata : <label id="wrd"></label>
+            <span class="text-result">
+              Kata : <label id="wrd"></label>
+            </span>
           </div>
           <div class="form-group">
             <button type="button" class="btn btn-primary" onclick="cntChar()">
@@ -41,6 +51,33 @@
         </form>
       </div>
     </div>
+    <!-- Modal About -->
+    <div class="modal fade" role="dialog" id="about">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            Tentang Program
+          </div>
+          <div class="modal-body">
+            <div class="text-center mb-2">
+              <span>Donasi</span>
+              <br>
+              <img src="qr-support.png" alt="">
+            </div>
+            <p id="author"></p>
+            <p id="email"></p>
+            <p id="appVersion"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+              <i class="fas fa-times"></i>
+              <span>Tutup</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal About -->
     <!-- Jquery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -50,6 +87,12 @@
     <!-- Toastr -->
     <script src="node_modules/toastr/build/toastr.min.js"></script>
     <script type="text/javascript">
+      $.getJSON('./package.json',function(data){
+        // console.log(data);
+        $('#appVersion').html("Version : "+data.version);
+        $('#author').html("Author : "+data.author.name);
+        $('#email').html("Email : "+data.author.email);
+      })
     	function cntChar(){
 	    	var text = document.getElementById('text').value;
 	    	// console.log(text);
