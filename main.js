@@ -1,5 +1,5 @@
 const { app, BrowserWindow, Menu, autoUpdater, dialog } = require('electron');
-const server = 'https://vercel.com/rzak23/count-char';
+const server = 'https://github.com/rzak23/countChar/releases';
 const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 
 function createWindow () {
