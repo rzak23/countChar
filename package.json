@@ -1,6 +1,6 @@
 {
   "name": "countChar",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Apa itu CountChar?\r ===\r CountChar merupakan aplikasi sederhana untuk menghitung jumlah karakter dan jumlah kata pada sebuah kalimat atau paragraf yang dibangun menggunakan [Electron](https://electronjs.org). Code dibuat dengan menggunakan bahasa pemrograman Javascript dengan tampilan dibantu bahasa markup HTML dan stylesheet CSS [Bootstrap](https://getbootstrap.com)",
   "main": "main.js",
   "repository": {
@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "electron .",
-    "build-win64": "electron-builder build --win --x64",
-    "build-win32": "electron-builder --windows nsis:ia32"
+    "win64": "electron-builder build --win --x64",
+    "win32": "electron-builder build --win --ia32"
   },
   "keywords": [],
   "author": {
@@ -20,7 +20,7 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "electron": "^12.0.7",
+    "electron": "^13.0.1",
     "electron-builder": "^22.10.5"
   },
   "dependencies": {
