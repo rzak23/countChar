@@ -2,8 +2,22 @@ body{
     background-color: #353b48;
 }
 
-.text-result{
-    color: #ffffff;
+@media (prefers-color-scheme: dark) {
+    body { 
+        background: #2f3542;
+    }
+    .text-result{
+        color: #ffffff;
+    }
+}
+  
+@media (prefers-color-scheme: light) {
+    body { 
+        background: #a4b0be;
+    }
+    .text-result{
+        color: #000000;
+    }
 }
 
 .text-editor{
