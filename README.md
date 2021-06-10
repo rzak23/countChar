@@ -5,8 +5,7 @@ CountChar merupakan aplikasi sederhana untuk menghitung jumlah karakter dan juml
 Download App
 ===
 Untuk menggunakan CountChar bisa di download melalui tautan berikut  
-Windows 32-bit : https://pinmu.my.id/LdNtEi  
-Windows 64-bit : https://pinmu.my.id/WeJTQc
+[Release](https://github.com/rzak23/countChar/releases)
 
 Cara Pengembangan Program
 ===
