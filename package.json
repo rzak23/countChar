@@ -20,13 +20,14 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "electron": "^13.1.9",
-    "electron-builder": "^22.11.7"
+    "electron": "^13.4.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "bootstrap": "^5.1.0",
+    "@xmldom/xmldom": "^0.7.5",
+    "bootstrap": "^5.1.1",
     "clipboard": "^2.0.8",
+    "electron-builder": "^22.11.7",
     "jquery": "^3.6.0",
     "toastr": "^2.1.4",
     "update-electron-app": "^2.0.1"
